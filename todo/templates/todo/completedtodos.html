@@ -1,0 +1,33 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+    Completed Todos
+{% endblock title %}
+
+{% load static %}
+
+{% block content %}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-7">
+
+    <h1>Completed Todos</h1>
+    <h2 class="error">{{ error }}</h2>
+        <br>
+        {% for todo in todos %}
+
+        <a href="{% url 'viewcomplete' todo.id %}"
+        class="list-group-item list-group-item-action{% if todo.important %} list-group-item-danger{% endif %}">
+        <b>{{ todo.title }}</b></a>
+        {% if todo.memo %}
+            {{ todo.memo|truncatechars:80|striptags }}
+        {% endif %}
+        <br>
+        (Completed {{ todo.datecompleted|date:'j M Y H:i' }})
+        <br><br>
+        {% endfor %}
+
+    <hr class="my-4"/>
+</div>
+</div>
+{% endblock content %}

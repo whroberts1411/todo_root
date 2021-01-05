@@ -1,0 +1,62 @@
+<!-- Nav Bar - the classes all refer to predefined css entries in the Bootstrap css file. -->
+<!-- We can use our own colours by adding specific styles, as per the following example : -->
+<!-- <nav class="navbar fixed-top navbar-expand-sm navbar-dark" style="background-color: rgb(57, 121, 133);"> -->
+
+{% load static %}
+<nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+
+    <!-- Branding for the navbar - icon and company/website name, for example -->
+    <a class="navbar-brand" href="#top"><img class="mylogo" src="{% static 'logo.png' %}"
+        alt="logo" /></a>
+
+    <!-- Show name of logged-in user, with option to log out -->
+    {% if user.is_authenticated %}
+        <form action="{% url 'logoutuser' %}" method="POST">
+            {% csrf_token %}
+                <i class="loggedin">Logged in as {{ user.username }}</i>
+                <button type="submit" class="btn btn-outline-warning btn-sm">Logout</button>
+        </form>
+    {% endif %}
+
+    <!-- This is the button that's displayed for a narrow screen e.g. a smartphone. -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- This defines the navigation elements, as an unordered list. -->
+
+    <div class="collapse navbar-collapse" id="navbarMenu">
+
+        <!-- ml-auto shifts the menu items to the right of the bar (ml = margin-left) -->
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'currenttodos' %}" >Current Todos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'completedtodos' %}" >Completed Todos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'createtodo' %}" >Create Todo</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'signupuser' %}" >Signup</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'loginuser' %}" >Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin141148/login/?next=/admin141148/" target="_blank">Admin</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% static 'django.pdf' %}" target="_blank">Django Help</a>
+            </li>
+        </ul>
+
+    </div>
+
+</nav>
+
+<br><br><br><br>

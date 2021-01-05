@@ -1,0 +1,80 @@
+/*--------------------------------------------------------------------------*/
+/*  Style definitions for the Todo website  --------------------------------*/
+/*--------------------------------------------------------------------------*/
+
+/* CLASS DEFINITIONS -------------------------------------------------------*/
+.navbar {
+    background-color: darksalmon !important;
+}
+
+.navbar-nav .nav-link {
+    color:rgb(203, 228, 65) !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: red !important;
+}
+
+.mylogo {
+    /* Round the top corners of the logo, keep bottom corners right-angled */
+    border-radius: 20px 20px 0 0;
+}
+
+.row {
+    padding-left: 20px;
+}
+
+.projimage {
+    height: 250px;
+}
+
+.error {
+    color: red;
+}
+
+.loggedin {
+    padding-right: 20px;
+    color:rgb(203, 228, 65);
+}
+
+.footer {
+    color:rgb(203, 228, 65);
+    background-color: darksalmon;   
+}
+
+.extern {
+    color:rgb(203, 228, 65);
+    background-color: darksalmon;   
+}
+
+.extern:hover {
+    color: red;
+}
+
+/* HTML TAG DEFINITIONS ----------------------------------------------------*/
+h1 {
+    color: rgb(116, 114, 114);
+}
+
+h1::first-letter {
+    color: rgb(153, 7, 7);
+    font-size: 110%;
+}
+
+h5 {
+    color:rgb(5, 7, 133);
+}
+
+/* MISCELLANEOUS DEFINITIONS -----------------------------------------------*/
+#blogtitle {
+    font-size: 6rem;
+}
+
+@media (min-width: 992px) {
+    #hometext {
+        font-size: 4rem;
+    }
+    #blogdetailtitle {
+        font-size: 5rem;
+    }
+}

@@ -1,0 +1,44 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+    Sign Up
+{% endblock title %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="row justify-content-center mt-5">
+    <div class="col-md-5">
+
+    <h1>Sign Up</h1>
+
+    <h2 class="error">{{ error }}</h2>
+    <br>
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="username"><b>Username</b></label>
+            <input type="text" name="username" class="form-control" id="username" aria-describedby="usernameHelp" required>
+            <small id="usernameHelp" class="form-text text-muted">Your username must be unique. We'll let you know if someone has taken it already.</small>
+        </div>
+        <div class="form-group">
+            <label for="password1"><b>Password</b></label>
+            <input type="password" name="password1" class="form-control" id="password1" required>
+        </div>
+        <div class="form-group">
+            <label for="password2"><b>Confirm Password</b></label>
+            <input type="password" name="password2" class="form-control" id="password2" required>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+        <br>
+    </form>
+    <hr class="my-4"/>
+    </div>
+    </div>
+
+{% endblock content %}

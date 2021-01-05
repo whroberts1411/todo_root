@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Todo Home Page
+{% endblock title %}
+
+{% load static %}
+
+{% block content %}
+    <br>
+    <br>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8 text-center">
+        <h1>Todo Home Page</h1>
+        <h2 class="error">{{ error }}</h2>
+        <br><br>
+        <p>
+            Create your own todo lists, that you can amend, list and mark as
+            completed. <br>They are completely private - no-one can see them except you,
+            so make sure you don't forget your login details!<br><br>
+            To get started, click the <b>Signup</b> button above, or the <b>Login</b>
+            button if you've already registered with us.
+        </p>
+        <br><br>
+        <hr class="my-4"/>
+    </div>
+    </div>
+
+{% endblock content %}
