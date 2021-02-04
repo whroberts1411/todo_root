@@ -127,6 +127,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # If the local_settings file is present, we're running locally, so override the
 # live server-specific settings. Otherwise, the settings in this file (settings)
 # will take priority.
+
 try:
     from .local_settings import *
 except ImportError:
