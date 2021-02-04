@@ -3,8 +3,13 @@
 /*--------------------------------------------------------------------------*/
 
 /* CLASS DEFINITIONS -------------------------------------------------------*/
+
+/* START OF NAVIGATION BAR COLOUR SETTINGS */
+
 .navbar {
     background-color: darksalmon !important;
+    opacity: 0.9;
+    border-bottom: rgb(73, 3, 3) 3px solid;
 }
 
 .navbar-nav .nav-link {
@@ -20,6 +25,64 @@
     border-radius: 20px 20px 0 0;
 }
 
+.loggedin {
+    padding-right: 20px;
+    color:rgb(203, 228, 65);
+}
+
+.dropdown-item {
+	background-color: darksalmon !important;
+	color:rgb(203, 228, 65) !important;
+}
+
+.dropdown-item:hover {
+	color: red !important;
+}
+
+/* END OF NAVIGATION BAR SETTINGS */
+
+/* START OF FOOTER SETTINGS */
+
+.footer {
+    color:rgb(203, 228, 65);
+    background-color: darksalmon;
+    opacity: 0.9;
+    border-top: rgb(73, 3, 3) 3px solid;
+}
+
+.extern {
+    color:rgb(203, 228, 65);
+    background-color: darksalmon;
+}
+
+.extern:hover {
+    color: red;
+}
+
+/* END OF FOOTER SETTINGS */
+
+/* Main Page Body - set up background image and overlay */
+
+#mainBlock {
+    background: url(background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    min-height: 1000px;
+}
+
+#mainBlock .dark-overlay {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 1000px;
+    background: rgba(255,255,255,0.95);
+    background-attachment: fixed;
+}
+
+/* ------------------------------------------------------- */
+
 .row {
     padding-left: 20px;
 }
@@ -29,25 +92,6 @@
 }
 
 .error {
-    color: red;
-}
-
-.loggedin {
-    padding-right: 20px;
-    color:rgb(203, 228, 65);
-}
-
-.footer {
-    color:rgb(203, 228, 65);
-    background-color: darksalmon;   
-}
-
-.extern {
-    color:rgb(203, 228, 65);
-    background-color: darksalmon;   
-}
-
-.extern:hover {
     color: red;
 }
 

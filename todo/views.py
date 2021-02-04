@@ -22,7 +22,9 @@ from django.utils import timezone
 def home(request):
     """ Display the home screen. """
 
-    return render(request, 'todo/home.html')
+    # Example of altering or setting a Bootstrap class value at runtime.
+    # This sets the background colour of an alert box.
+    return render(request, 'todo/home.html', {'alert':'bg-warning'})
 
 #--------------------------------------------------------------------------------------------------
 
@@ -89,7 +91,8 @@ def currenttodos(request):
 
     # If not correctly logged in, exit with n error message.
     if not request.user.is_authenticated:
-        return render(request, 'todo/home.html', {'error':'You need to log in first!'})
+        return render(request, 'todo/home.html', {'error':'You need to log in first!',
+                                                    'alert':'bg-warning'})
 
     # only return records for the logged in user that have not been completed.
     todos = Todo.objects.filter(user=request.user, datecompleted__isnull=True)
@@ -105,7 +108,8 @@ def createtodo(request):
 
     # Check if the user is logged in. If not, return an error message.
     if not request.user.is_authenticated:
-        return render(request, 'todo/home.html', {'error':'You need to log in first!'})
+        return render(request, 'todo/home.html', {'error':'You need to log in first!',
+                                                    'alert':'bg-warning'})
 
     # Display the appropriate empty form on first display of the screen.
     if request.method == "GET":
@@ -196,7 +200,8 @@ def completedtodos(request):
 
     # If not correctly logged in, exit with n error message.
     if not request.user.is_authenticated:
-        return render(request, 'todo/home.html', {'error':'You need to log in first!'})
+        return render(request, 'todo/home.html', {'error':'You need to log in first!',
+                                                    'alert':'bg-warning'})
 
     # only return records for the logged in user that have been completed.
     todos = Todo.objects.filter(user=request.user, datecompleted__isnull=False).order_by('-datecompleted')
@@ -231,6 +236,4 @@ def viewcomplete(request, todo_pk):
                                     'error':'Invalid values entered'})
 
 #--------------------------------------------------------------------------------------------------
-
-
 #--------------------------------------------------------------------------------------------------

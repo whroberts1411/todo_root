@@ -7,23 +7,32 @@
 {% load static %}
 
 {% block content %}
-    <br>
-    <br>
-    <div class="row justify-content-center mt-5">
-        <div class="col-md-8 text-center">
-        <h1>Todo Home Page</h1>
-        <h2 class="error">{{ error }}</h2>
-        <br><br>
-        <p>
-            Create your own todo lists, that you can amend, list and mark as
-            completed. <br>They are completely private - no-one can see them except you,
-            so make sure you don't forget your login details!<br><br>
-            To get started, click the <b>Signup</b> button above, or the <b>Login</b>
-            button if you've already registered with us.
-        </p>
-        <br><br>
-        <hr class="my-4"/>
+
+    <div class="container mt-2">
+        <div class="jumbotron text-center bg-transparent">
+            <h1>Todo Home Page</h1>
+            <h2 class="text-danger font-italic">{{ error }}</h2>
+            <blockquote class="lead mt-4">
+                Create your own todo lists, that you can amend, list and mark as
+                completed. <br>They are completely private - no-one can see them except you,
+                so make sure you don't forget your login details!         
+                <hr class="my-4"/>
+                <p class="font-italic">
+                To get started, click the <b>Signup</b> button above, or the <b>Login</b>
+                button if you've already registered with us.</p>
+            </blockquote>
+        </div>
+    </div> 
+
+    {% if not user.is_authenticated %}
+    <!-- The definition of the alert box is passed in from view.py!-->
+    <div class="container alert alert-dismissable text-center w-50 {{ alert }}">
+        <button class="close" type="button" data-dismiss="alert">
+            <span><i class="far fa-times-circle"></i></span>
+        </button>
+        <strong>Not Logged In</strong>
+        <p>Please login or signup to use this site</p>
     </div>
-    </div>
+    {% endif %}
 
 {% endblock content %}

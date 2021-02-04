@@ -17,7 +17,7 @@
         {% for todo in todos %}
 
         <a href="{% url 'viewtodo' todo.id %}"
-        class="list-group-item list-group-item-action{% if todo.important %} list-group-item-danger{% endif %}">
+        class="list-group-item list-group-item-action {% if todo.important %} list-group-item-danger{% endif %}">
         <b>{{ todo.title }}</b></a>
         {% if todo.memo %}
             {{ todo.memo|truncatechars:80|striptags }}

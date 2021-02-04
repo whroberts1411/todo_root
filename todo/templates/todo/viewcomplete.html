@@ -17,8 +17,7 @@
     <br>
     <form method="POST">
         {% csrf_token %}
-        <!-- Make sure that the displayed fields are read-only. The user is only allowed to change the
-             "completed" status on this screen -->
+        <!-- Make sure that the displayed fields are read-only. The user is only allowed to change the "completed" status on this screen -->
         <div class="form-group">
             <label for="title"><b>Title</b></label>
             <input type="text" name="title" class="form-control" id="title" value="{{ todo.title }}" readonly>
@@ -32,7 +31,8 @@
                 id="important" {% if todo.important %}checked{% endif %} onclick="return false;">
             <label class="form-check-label" for="important">Important</label>
         </div>
-        <button type="submit" class="btn btn-primary">Restore Todo</button>
+        <button type="submit" class="btn btn-primary">
+            <i class="fas fa-calendar-alt"></i>  Restore Todo</button>
 
     </form>
     <br>

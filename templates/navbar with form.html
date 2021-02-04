@@ -32,16 +32,15 @@
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'home' %}">Home</a>
             </li>
-
-            <li class="nav-item dropdown ">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Todo</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{% url 'currenttodos' %}" >Current Todos</a>
-                    <a class="dropdown-item" href="{% url 'completedtodos' %}" >Completed Todos</a>
-                    <a class="dropdown-item" href="{% url 'createtodo' %}" >Create Todo</a>
-                </div>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'currenttodos' %}" >Current Todos</a>
             </li>
-
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'completedtodos' %}" >Completed Todos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'createtodo' %}" >Create Todo</a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'signupuser' %}" >Signup</a>
             </li>
@@ -56,6 +55,11 @@
             </li>
         </ul>
 
+        <form action="" class="form-inline ml-auto">
+            <input type="text" class="form-control" placeholder="Search">
+            <button class="ml-2 btn btn-outline-success">Search</button>
+        </form>
+        
     </div>
 
 </nav>
