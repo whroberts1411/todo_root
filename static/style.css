@@ -64,7 +64,7 @@
 /* Main Page Body - set up background image and overlay */
 
 #mainBlock {
-    background: url(../static/background.jpg);
+    background: url(background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
